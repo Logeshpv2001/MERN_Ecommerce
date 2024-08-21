@@ -15,6 +15,20 @@ app.use(cors());
 mongoose.connect("mongodb+srv://logeshkarthi782:YLWzsxdBggPXaEvw@cluster1.pkyc5ip.mongodb.net/e-commerce");
 
 
+app.get("/upload/images/:image" , async(req,res)=>{
+  const image = req.params.image;
+  console.log(image);
+  fs.readFile(`./upload/images/${image}` , (error,data)=>{
+        if(error){
+          res.json({
+            error: "error finding image"
+          })
+          
+        }
+        res.writeHead(200, { 'Content-Type': 'image/jpeg' }).end(data);
+  })
+
+})
 
 //Image Storage Engine 
 const storage = multer.diskStorage({
