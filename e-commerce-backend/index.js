@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 // Database Connection With MongoDB
-mongoose.connect("mongodb+srv://logeshkarthi782:YLWzsxdBggPXaEvw@cluster1.pkyc5ip.mongodb.net/e-commerce");
+mongoose.connect("mongodb+srv://logeshkarthi782:logeshpv2001@cluster1.pkyc5ip.mongodb.net/e-commerce");
 
 
 app.get("/upload/images/:image" , async(req,res)=>{
